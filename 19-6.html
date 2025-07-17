@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,12 +28,22 @@
             textoPiojosa.style.padding = "10px";
             document.body.appendChild(textoPiojosa);
         }
+
+        function crearTextoGoodbay() {
+            const textoGoodbay = document.createElement("p");
+            textoGoodbay.textContent = "we only said goodbay with words";
+            textoGoodbay.style.backgroundColor = "gray";
+            textoGoodbay.style.color = "black";
+            textoGoodbay.style.padding = "10px";
+            document.body.appendChild(textoGoodbay);
+        }
     </script>
 </head>
 <body>
     <button onclick="agregarElemento()">Haz clic aquí</button>
     <button onclick="crearTextoMate()">Crear texto 'amo el mate'</button>
     <button onclick="crearTextoPiojosa()">Crear texto 'piojosa hasta la muerte'</button>
+    <button onclick="crearTextoGoodbay()">Crear texto 'we only said goodbay with words'</button>
 
     
 </body>
