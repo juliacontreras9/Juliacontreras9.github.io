@@ -1,46 +1,56 @@
+agregarElemento(undefined)
 <!DOCTYPE html>
-</html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    </title>title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mi página</title>
 </head>
 <body>
-    <h1 id="titulo"
+    <h1 id="titulo">Título</h1>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const titulo = document.getElementById('titulo');
+        titulo.innerHTML = 'hola soy julia jaja';
+        titulo.style.color = 'red';
+        titulo.style.backgroundColor = 'yellow';
+
+        const crearElemento = document.createElement('h1');
+        crearElemento.innerHTML = 'como estas';
+        crearElemento.style.color = 'purple';
+        crearElemento.style.backgroundColor = 'lightblue';
+        document.body.appendChild(crearElemento);
+
+        function convertir_CMYK_a_RGB(c, m, y, k) {
+            const r = Math.round(255 * (1 - c) * (1 - k));
+            const g = Math.round(255 * (1 - m) * (1 - k));
+            const b = Math.round(255 * (1 - y) * (1 - k));
+            return 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+
+        function agregarElemento(text = 'Elemento por defecto', color = 'black', bg = 'transparent') {
+            const el = document.createElement('div');
+            el.textContent = text;
+            el.style.color = color;
+            el.style.backgroundColor = bg;
+            el.style.padding = '6px';
+            el.style.margin = '6px 0';
+            document.body.appendChild(el);
+            return el;
+        }
+
+        agregarElemento('rgb', 'blue', 'rgb(2,3,4)');
+        const a = agregarElemento('segundo elemento', 'red', 'pink');
+        agregarElemento(); // usa valores por defecto
+
+        // Ejemplo de uso de convertir_CMYK_a_RGB
+        const rgb = convertir_CMYK_a_RGB(0, 0.5, 0.5, 0);
+        agregarElemento('CMYK -> ' + rgb, 'white', rgb);
+    });
+    </script>
 </body>
-
-
-
-let titulo = document.getElementById("titulo")
-titulo.innerHTML = "hola soy julia jaja"
-titulo.style.color = "red"
-titulo.style.backgroundColor = "yellow"
-
-let crearElemento= document.createElement ("h1")
- crearElemento.innerHTML = "como estas"
- crearElemento.style.color = "purple"
- crearElemento.style.backgroundColor = "lightblue"
-document.body.appendChild(crearElemento)
-
-function convertir_CMYK_a_RGB(c,m,y,k){
-let r,g,b
-r=255*(1-c)*(1-k)
-g=255*(1-m)*(1-k)
-b=255*(1-y)*(1-k)
-
-return "rgb"("+r+","+g+","+b+")"
-}
-
-agregarElemento("rgb","blue","rgb(2,3,4)")
-let a = agregarElemento("segundo elemento","red","pink")
-
-agregarElemento(undefined)
-
-
-
-
-
-
-
+</html>
 
  </html>
  
